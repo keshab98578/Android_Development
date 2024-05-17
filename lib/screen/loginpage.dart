@@ -1,3 +1,4 @@
+import 'package:android_development/screen/signuppage.dart';
 import 'package:android_development/screen/splashscreen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,27 +28,39 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  void goSignup() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const SignUppage()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 46, 26, 148),
+      backgroundColor: const Color.fromARGB(255, 212, 208, 208),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              " Food Express",
+              " Welcome DineDeliver",
               textAlign: TextAlign.center,
               style: TextStyle(
+                  fontStyle: FontStyle.normal,
                   fontSize: 30,
-                  color: Colors.blue,
+                  color: Color.fromARGB(255, 26, 36, 82),
                   fontWeight: FontWeight.bold),
             ),
             Container(
-              margin: const EdgeInsets.all(25),
+              margin: const EdgeInsets.all(5),
               width: 200,
             ),
             Card(
+              color: Colors.white,
+              elevation: 5,
+              shadowColor: Colors.black,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                  side: const BorderSide(color: Colors.white, width: 5)),
               margin: const EdgeInsets.all(20),
               child: SingleChildScrollView(
                 child: Padding(
@@ -108,8 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                         ElevatedButton(
                           onPressed: submit,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                                const Color.fromRGBO(24, 119, 242, 1),
+                            backgroundColor: Colors.green,
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 100, vertical: 10),
                             shape: RoundedRectangleBorder(
@@ -136,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                                   TextStyle(fontSize: 16, color: Colors.black),
                             ),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: goSignup,
                               child: const Text(
                                 "SignUp",
                                 style: TextStyle(
@@ -174,8 +186,7 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(color: Colors.black, fontSize: 20),
                           ),
                           style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  const Color.fromRGBO(24, 119, 242, 1),
+                              backgroundColor: Colors.green,
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 50, vertical: 10),
                               shape: RoundedRectangleBorder(

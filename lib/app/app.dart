@@ -1,4 +1,4 @@
-import 'package:android_development/screen/loginpage.dart';
+import 'package:android_development/screen/signuppage.dart';
 
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LoginPage(),
+      home: SignUppage(),
     );
   }
 }
